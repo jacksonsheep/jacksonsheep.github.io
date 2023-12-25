@@ -36,7 +36,7 @@ function array(){
 	declare -A site=(["google"]="www.google.com" ["runoob"]="www.runoob.com" ["taobao"]="www.taobao.com")
 	echo "array = ${site[*]} , array key= ${!site[*]}, array length= ${#site[*]}"
 }
-function read(){
+function input(){
 	echo 'input number at below,enter -1 to exit'
 	read num;
 	echo "read $num"
@@ -48,6 +48,6 @@ case $1 in
     3) killall $2;;
     4) loop $2 $3 ;;
     5) array ;;
-    6) read ;;
+    6) input ;;
 	*) echo 'error input number';;
 esac

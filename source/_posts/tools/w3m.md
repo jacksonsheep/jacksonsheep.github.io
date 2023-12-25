@@ -1,5 +1,5 @@
---
-title: w3m 配置
+---
+title: w3m
 date: 2023-11-03
 tags:
   - tool
