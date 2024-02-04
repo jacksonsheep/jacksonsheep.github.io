@@ -41,6 +41,9 @@ function input(){
 	read num;
 	echo "read $num"
 }
+function update_filetime(){
+    find $1 -name $2 -f |xargs touch
+}
 case $1 in
    -1) echo 'test done';break;;
     1) do_test;;
@@ -51,3 +54,4 @@ case $1 in
     6) input ;;
 	*) echo 'error input number';;
 esac
+
