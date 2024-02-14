@@ -105,9 +105,9 @@ deploy:
   type: git
   repo: git@github.com:jacksonsheep/blog #这里填你自己的github地址
   branch: main
-#search:
-#  path: search.xml
-#  field: all
+search:
+  path: search.xml
+  field: all
 
 jsonContent:
     meta: false
