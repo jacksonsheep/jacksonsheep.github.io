@@ -8,12 +8,12 @@ subtitle: ''
 description: ''
 keywords:
 author: Jason Chen
-language: en
+language: zh-CN #en
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://jacksonsheep.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,7 +44,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -97,33 +97,12 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia #landscape
+theme: 3-hexo #next #aircloud #landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:jacksonsheep/blog #这里填你自己的github地址
+  repo: git@github.com:jacksonsheep/jacksonsheep.github.io
+#  repo: https://github.com/jasonsheep/jacksonsheep.github.io #这里填你自己的github地址
   branch: main
-search:
-  path: search.xml
-  field: all
-
-jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
