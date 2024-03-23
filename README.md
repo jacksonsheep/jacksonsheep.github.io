@@ -11,4 +11,16 @@
     3. the reader response afterthe wtch somethig, such as a book, a movie ans and so on.
     4. the report about yourself in so many time to completed. the part is private authority, nobody can find except owner.
 
-https://jacksonsheep.github.io/blog
+exarmple:https://jacksonsheep.github.io/blog
+
+the application obtain serval function and design plan are bellow.
+1. the pdf file watch and support bookmarket
+2. the weather get temporture ,sky and closth suggest
+3. the translate by local dicitonary and somethng else.
+4. add the miniporgram way to accomplish it.
+
+so, the environment conditions are bellow.
+1. get a nas storage server and web server, for the file storage and service support.
+2. if we can do, add nginx to import the distribute stress.
+3. add the package to deploy in anywhere.
+

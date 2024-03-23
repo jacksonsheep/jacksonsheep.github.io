@@ -1,6 +1,6 @@
 QQ： cceumsvavjxhbdcc
 163 ：XLTPZQDKHHLYJHJM
-
+cnb: 51920F7DC53D00BBF57B190D5B1CD74E46FAD9E281CFFEC7BBED6CDF1200C062
 毕设日志
 https://gitee.com/pangqingzhou
 进销库
@@ -17,3 +17,9 @@ yarn config set disturl https://npm.taobao.org/dist --global
 https://dav.jianguoyun.com/dav/
 851284850@qq.com
 amf5pkj99nemuu6y
+
+
+https://cpolar.com/docs
+https://cpolar.com/blog
+wget -O install-nethunter-termux https://offs.ec/2MceZWr
+16465230000
