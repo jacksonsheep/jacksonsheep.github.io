@@ -23,3 +23,6 @@ https://cpolar.com/docs
 https://cpolar.com/blog
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
 16465230000
+
+webcal://dida365.com/pub/calendar/feeds/d7f3h2ndgpm4/basic.ics
+todo+rpc8907kxl78@mail.dida365.com
