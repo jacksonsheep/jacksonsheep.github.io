@@ -1,0 +1,6 @@
+[submodule "vscode"]
+	path = vscode
+	url = https://gitee.com/yuxuanyang/demo
+[submodule "pendants"]
+	path = pendants
+	url = https://gitee.com/yuxuanyang/pendants.git
