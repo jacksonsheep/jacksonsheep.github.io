@@ -5,3 +5,13 @@ GET http://github.com
 GET https://www.juhe.cn/docs/api
 
 GET https://hq.sinajs.cn
+
+GET http://finance.eastmoney.com/
+
+GET http://finance.eastmoney.com/a/czqyw.html
+
+#ETF
+GET http://fund.eastmoney.com/ETFN_jzzzl.html?spm=100015.lw.1  
+
+
+GET https://www.eastmoney.com/

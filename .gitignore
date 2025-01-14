@@ -3,3 +3,4 @@
 /base/project
 *.html
 /db.json
+server.log

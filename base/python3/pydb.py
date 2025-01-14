@@ -17,6 +17,7 @@ def connect_to_redis(host='172.31.174.62', port=6379, passwd='0706Test',db=1):
 def connect_to_sqlite3():
     # 连接到 SQLite 数据库（如果数据库不存在，则会自动创建）
     conn = sqlite3.connect('../infra.db')
+    return conn
 """
     # 创建一个游标对象
     cursor = conn.cursor()
@@ -73,8 +74,8 @@ def connect_to_sqlite3():
     print("\n删除后的用户列表：")
     for row in rows:
         print(row)
-"""
     return conn
+"""
 
 def disconnect_to_sqlite3(conn):
     # 关闭连接
@@ -88,7 +89,7 @@ def view_excel(file_path):
     except Exception as e:
         print(f"Error reading the file: {e}")
 
-def write_to_xlsx(file_path, data):
+def write_to_xlsx(file_path, sheet,data):
     # 创建一个 DataFrame
     if data == None :
         data = {
@@ -100,7 +101,7 @@ def write_to_xlsx(file_path, data):
 
     # 将 DataFrame 写入 Excel 文件
     with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
-        df.to_excel(writer, sheet_name='Sheet1', index=False)
+        df.to_excel(writer, sheet_name=sheet, index=False)
 
     print("Excel 文件已成功保存！")
 
@@ -115,5 +116,5 @@ if __name__ == "__main__":
     # disconnect_to_sqlite3(sqlite_client)
 
     # # 连接xlsx
-    #write_to_xlsx(file_path='test.xlsx', data=None)
-    #view_excel(file_path='test.xlsx')
+    write_to_xlsx(file_path='test.xlsx', data=None)
+    view_excel(file_path='test.xlsx')

@@ -1,8 +1,32 @@
-import requests
-import json
+import requests 
+from json import loads
+from sys import argv
+from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
-from pydb import connect_to_redis
-def infomations():
+import re
+import pydb
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    'Content-Type': 'application/json; charset=utf-8'
+}
+
+def api_request(request_type, url, headers, params=None):
+    
+    if request_type == 'get' or request_type == 'GET' :
+        response = requests.get(url, headers=headers, params=params)
+    elif request_type == 'post' or request_type == 'POST' :
+        response = requests.post(url, headers=headers, data=params)
+    else :
+        return None
+
+    if response.status_code == 200 :
+        return response.content
+    else :
+        print(f"Failed to retrieve data: {response.status_code}")
+        return None
+
+def stock_infomations():
     '''
     https://push2his.eastmoney.com/api/qt/stock/kline/get 是东方财富网用于获取股票K线数据的API，以下是对其常见参数含义的详细解释：
     fields1
@@ -57,7 +81,11 @@ def infomations():
     '''
     pass
 
-def get_stock_days(start_date, end_date, stock, k_time):
+def get_stock_days(stock='0.000977', k_time=5, days=-9):
+    current_date = datetime.now().date();
+    week_date = current_date+ timedelta(days=-9)
+    end_date = datetime.strftime(current_date, "%Y%m%d")
+    start_date = end_date if k_time < 100 else datetime.strftime(week_date, "%Y%m%d")
     url = 'https://push2his.eastmoney.com/api/qt/stock/kline/get'
     params = {
         'fields1': 'f1,f2,f3,f4,f5,f6',
@@ -68,33 +96,56 @@ def get_stock_days(start_date, end_date, stock, k_time):
         'end': end_date,
         'secid': stock
     }
-
+    # print(params)
     response = requests.get(url, params=params)
     if response.status_code == 200:
-        data = json.loads(response.text)
+        data = loads(response.text)
+        # print(data)
         kline_data = data['data']['klines']
-        result_list = []
+        redis = pydb.connect_to_redis()
         print('[start,end,max,min,count,sum]')
         for day in kline_data:
             day_result = [item.strip() for item in day.split(",")]
-            result_list.append(day_result)
+            day_result[0] = stock+':'+day_result[0]
+            if k_time == 101 :
+                redis.set(day_result[0], '-'.join(day_result[1:]))
             print(day_result)
-        if k_time == 101 :
-            store_redis(result_list)
     else:
-        print(f"请求失败，状态码: {response.status_code}")
+        print(f"request error code is: {response.status_code}")
 
-def store_redis(data):
-    redis = connect_to_redis()
-    for day in data:
-        redis.set(day[0], '-'.join(day[1:]))
+def get_stock_news():
+    url = "http://finance.eastmoney.com/"
+    with open('./test.html', 'r', encoding='utf-8') as file:
+        response = file.read()
+    # response = api_request(request_type='get',url=url,headers=headers)
+    if response:
+        soup = BeautifulSoup(response, 'html.parser')
+        # yw = soup.find('div', class_='mainbody')
+        print(soup)
+        news = soup.find_all('div', class_='news_kx_ci')
+        print(news)
+        # for new in news:
+        #     for item in new.find_all('a'):
+        #       print(item.get_text(strip=True))
+        # news_list = soup.find('span', class_='search_hot_links')
+        # for item in list.find_all('a'):
+            # print(item.get_text(strip=True))
 
-# 只获取日期部分
-current_date = datetime.now().date();
-week_date = current_date+ timedelta(days=-9)
-current_date_str = datetime.strftime(current_date, "%Y%m%d")
-week_date_str = datetime.strftime(week_date, "%Y%m%d")
+if __name__ == "__main__":
+    # print(argv)
+    # if len(argv) < 2:
+    #     print("invalid args to found")
+    # else:
+    #     match argv[1]:
+    #         case 'stock': 
+            #     if len(argv) == 2:
+            #         get_stock_days()
+            #     elif len(argv) == 3:
+            #         get_stock_days(stock=argv[2])
+            #     elif len(argv) == 4:
+            #         get_stock_days(stock=argv[2], k_time=int(argv[3]))
+            #     else :
+            #         print('error input')
+            # case 'top': 
+              get_stock_news() 
 
-#get_stock_days(start_date=week_date_str, end_date=current_date_str, stock='0.000977', k_time=101)
-
-get_stock_days(start_date=current_date_str, end_date=current_date_str, stock='0.000977', k_time=1)
