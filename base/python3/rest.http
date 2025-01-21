@@ -11,7 +11,10 @@ GET http://finance.eastmoney.com/
 GET http://finance.eastmoney.com/a/czqyw.html
 
 #ETF
-GET http://fund.eastmoney.com/ETFN_jzzzl.html?spm=100015.lw.1  
+GET http://stock.eastmoney.com/bidu.html
 
+GET http://finance.eastmoney.com/yaowen.html
 
 GET https://www.eastmoney.com/
+
+GET https://hq.sinajs.cn/list=sz000977,sh600756,sh512690

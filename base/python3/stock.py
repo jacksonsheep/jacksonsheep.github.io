@@ -114,22 +114,47 @@ def get_stock_days(stock='0.000977', k_time=5, days=-9):
         print(f"request error code is: {response.status_code}")
 
 def get_stock_news():
-    url = "http://finance.eastmoney.com/"
-    with open('./test.html', 'r', encoding='utf-8') as file:
-        response = file.read()
-    # response = api_request(request_type='get',url=url,headers=headers)
+    response = api_request(request_type='get',url="http://eastmoney.com",headers=headers)
     if response:
         soup = BeautifulSoup(response, 'html.parser')
-        # yw = soup.find('div', class_='mainbody')
-        print(soup)
-        news = soup.find_all('div', class_='news_kx_ci')
-        print(news)
-        # for new in news:
-        #     for item in new.find_all('a'):
-        #       print(item.get_text(strip=True))
-        # news_list = soup.find('span', class_='search_hot_links')
-        # for item in list.find_all('a'):
-            # print(item.get_text(strip=True))
+        # news_list = soup.find('div', class_='nmlist').find_all('a')
+        # news_list = soup.find('div',class_='news_kuaixun').find_all('a')
+        # news_list = soup.find('div', class_='hsgs_news').find_all('a')
+        # news_list = soup.find('div', class_='news_l2_b').find_all('a')
+        news_list = soup.find('div', class_='cjdd_tab_c').find_all('a')
+        for item in news_list:
+            print(item.get_text(strip=True))
+
+# TODO fund info search
+def get_fund_days():
+    pass
+    # with open('./test.html', 'r', encoding='utf-8') as file:
+    #     response = file.read()
+    
+
+
+# TODO find stock by name， return id
+def search_stocks(name):
+    # with open('./test.html', 'r', encoding='utf-8') as file:
+    #     response = file.read()
+    # params = {'keyword': name}
+    response = api_request(request_type='get', url='https://stock.eastmoney.com/', headers=headers)
+    soup = BeautifulSoup(response, 'html.parser')
+    
+    print(soup)
+    # 找到股票列表的表格
+    # stock_table = soup.find('table', {'id': ' QUOTE_TABLE'})
+    # if not stock_table:
+    #     print('没有找到相关股票。')
+    #     return
+    
+    # # 遍历表格中的行
+    # for row in stock_table.find_all('tr')[1:]:  # 跳过标题行
+    #     cols = row.find_all('td')
+    #     if len(cols) > 1:  # 确保有足够的数据列
+    #         stock_id = cols[0].text.strip()
+    #         stock_name = cols[1].text.strip()
+    #         print(f'股票ID: {stock_id}, 股票名称: {stock_name}')
 
 if __name__ == "__main__":
     # print(argv)
@@ -138,14 +163,16 @@ if __name__ == "__main__":
     # else:
     #     match argv[1]:
     #         case 'stock': 
-            #     if len(argv) == 2:
-            #         get_stock_days()
-            #     elif len(argv) == 3:
-            #         get_stock_days(stock=argv[2])
-            #     elif len(argv) == 4:
-            #         get_stock_days(stock=argv[2], k_time=int(argv[3]))
-            #     else :
-            #         print('error input')
-            # case 'top': 
-              get_stock_news() 
+                if len(argv) == 1:
+                    get_stock_days() # 0.000977 1.600756 0.159934
+                elif len(argv) == 2:
+                    get_stock_days(stock=argv[1])
+                elif len(argv) == 3:
+                    get_stock_days(stock=argv[1], k_time=int(argv[2]))
+                else :
+                    print('error input')
+            # case 'top': ·
+            #   get_stock_news() 
+            # case 'search':
+                # search_stocks('茅台')
 

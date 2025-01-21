@@ -6,5 +6,8 @@ git clone https://github.com/samba-team/samba
 
 git clone https://mirror.ghproxy.com/https://github.com/creazyboyone/FastGithub.git
 git clone https://github.com/aliyun-node/Node.js-Troubleshooting-Guide
+git clone https://github.com/taobao/nginx-book
 git clone https://github.com/mrdbourke/machine-learning-roadmap
 git clone https://github.com/talebook/talebook
+
+git clone https://github.com/LeekHub/leek-fund
