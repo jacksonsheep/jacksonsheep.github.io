@@ -81,7 +81,7 @@ def stock_infomations():
     '''
     pass
 
-def get_stock_days(stock='0.000977', k_time=5, days=-9):
+def get_stock_days(stock='0.000977', k_time=5, days=9):
     current_date = datetime.now().date();
     week_date = current_date+ timedelta(days=-9)
     end_date = datetime.strftime(current_date, "%Y%m%d")
@@ -103,7 +103,7 @@ def get_stock_days(stock='0.000977', k_time=5, days=-9):
         # print(data)
         kline_data = data['data']['klines']
         redis = pydb.connect_to_redis()
-        print('[start,end,max,min,count,sum]')
+        print('[start,\tend,\tmax,\tmin,\tcount,\tsum]')
         for day in kline_data:
             day_result = [item.strip() for item in day.split(",")]
             day_result[0] = stock+':'+day_result[0]
@@ -123,7 +123,7 @@ def get_stock_news():
         # news_list = soup.find('div', class_='news_l2_b').find_all('a')
         news_list = soup.find('div', class_='cjdd_tab_c').find_all('a')
         for item in news_list:
-            print(item.get_text(strip=True))
+            print(item.get_text(strip=True)+'\t'+item.get('href'))
 
 # TODO fund info search
 def get_fund_days():
@@ -131,8 +131,6 @@ def get_fund_days():
     # with open('./test.html', 'r', encoding='utf-8') as file:
     #     response = file.read()
     
-
-
 # TODO find stock by name， return id
 def search_stocks(name):
     # with open('./test.html', 'r', encoding='utf-8') as file:
@@ -158,21 +156,20 @@ def search_stocks(name):
 
 if __name__ == "__main__":
     # print(argv)
-    # if len(argv) < 2:
-    #     print("invalid args to found")
-    # else:
-    #     match argv[1]:
-    #         case 'stock': 
-                if len(argv) == 1:
-                    get_stock_days() # 0.000977 1.600756 0.159934
-                elif len(argv) == 2:
-                    get_stock_days(stock=argv[1])
-                elif len(argv) == 3:
-                    get_stock_days(stock=argv[1], k_time=int(argv[2]))
-                else :
-                    print('error input')
-            # case 'top': ·
-            #   get_stock_news() 
-            # case 'search':
-                # search_stocks('茅台')
+    if len(argv) < 2:
+        print("invalid args to found")
+    else:
+        match argv[1]:
+            case 'stock':  # 0.000977 1.600756 0.159934
+              code = input('code[0.000977 1.600756 0.159934]:').strip()
+              k = input('k:').strip()
+              day = input('days:').strip()
+              code = code if code else '0.000977'
+              k = int(k) if k else 5
+              day = int(day) if day else -9
+              get_stock_days(stock = code, k_time = k, days = day)
+            case 'top': 
+              get_stock_news() 
+            case 'search':
+                search_stocks('茅台')
 

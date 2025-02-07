@@ -8,6 +8,9 @@ import operator
 from sys import argv,path
 
 
+def hello_world():
+  pass
+
 # the single annotation
 '''
 this is a multi line annotaion

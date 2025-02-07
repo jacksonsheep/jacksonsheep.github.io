@@ -62,7 +62,7 @@ def get_flight_price(way, date):
         soup = BeautifulSoup(response.text, 'html.parser')
         # 查找所有包含航班信息的元素（假设在一个 div 中）
         # print (soup)
-        flight_items = soup.find_all('div', class_='flight-item')
+        flight_items = soup.find_all('div', class_='flig·ht-item')
         flight_list = []
         for item in flight_items:
             flight_info = {}

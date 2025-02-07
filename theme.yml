@@ -1,0 +1,18 @@
+# 本地搜索
+local_search:
+  enable: true
+# 主题颜色
+accent_color: red
+# 代码高亮主题
+codeblock:
+  highlight:
+    theme: tomorrow
+# 网站 favicon
+favicon: /favicon.ico
+# 侧边栏配置
+sidebar:
+  # 侧边栏位置
+  position: left
+  # 侧边栏显示目录
+  toc:
+    enable: true
