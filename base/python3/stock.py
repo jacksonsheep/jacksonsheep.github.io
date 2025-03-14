@@ -161,7 +161,7 @@ if __name__ == "__main__":
     else:
         match argv[1]:
             case 'stock':  # 0.000977 1.600756 0.159934
-              code = input('code[0.000977 1.600756 0.159934]:').strip()
+              code = input('code[0.000977 1.600756 0.159934 1.600603]:').strip()
               k = input('k:').strip()
               day = input('days:').strip()
               code = code if code else '0.000977'
