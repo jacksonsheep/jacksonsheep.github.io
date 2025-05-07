@@ -89,6 +89,7 @@ def get_stock_days(stock='0.000977', k_time=5, days=9):
     url = 'https://push2his.eastmoney.com/api/qt/stock/kline/get'
     params = {
         'fields1': 'f1,f2,f3,f4,f5,f6',
+        # 'fileds2': 'f51,f52,f53,f54,f55,f56',
         'fields2': 'f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61',
         'klt': k_time,
         'fqt': 0,
@@ -102,14 +103,20 @@ def get_stock_days(stock='0.000977', k_time=5, days=9):
         data = loads(response.text)
         # print(data)
         kline_data = data['data']['klines']
-        redis = pydb.connect_to_redis()
-        print('[start,\tend,\tmax,\tmin,\tcount,\tsum]')
+        # redis = pydb.connect_to_redis()
+        sqlite = pydb.connect_to_sqlite3();
+        print('[time,\tstart,\tend,\tmax,\tmin,\tcount,\tsum,\tmax_rate,\tmin_rate\trate\tsum_rate]')
+        # print(kline_data)
         for day in kline_data:
             day_result = [item.strip() for item in day.split(",")]
-            day_result[0] = stock+':'+day_result[0]
+            day_result[0] = str(stock)+','+day_result[0]
             if k_time == 101 :
-                redis.set(day_result[0], '-'.join(day_result[1:]))
+                # redis.set(day_result[0], '-'.join(day_result[1:]))
+                index = sqlite.cursor()
+                index.execute('INSERT INTO stock (stock, date, start, end, max,min,count,sum) VALUES (?,?,?,?,?,?,?,?)'(stock,day[0],day[1],day[2],day[3],day[4],day[5],day[6]))
+                sqlite.commit()
             print(day_result)
+            disconnect_to_sqlite3(sqlite)
     else:
         print(f"request error code is: {response.status_code}")
 
@@ -161,13 +168,14 @@ if __name__ == "__main__":
     else:
         match argv[1]:
             case 'stock':  # 0.000977 1.600756 0.159934
-              code = input('code[0.000977 1.600756 0.159934 1.600603]:').strip()
-              k = input('k:').strip()
-              day = input('days:').strip()
-              code = code if code else '0.000977'
-              k = int(k) if k else 5
-              day = int(day) if day else -9
-              get_stock_days(stock = code, k_time = k, days = day)
+              # code = input('code[0.000977 1.600756 0.159934 1.600603]:').strip()
+              # k = input('k:').strip()
+              # day = input('days:').strip()
+              # code = code if code else '0.000977'
+              # k = int(k) if k else 5
+              # day = int(day) if day else -9
+              # get_stock_days(stock = code, k_time = k, days = day)
+              get_stock_days(stock=1.600756,k_time=101,days=2)
             case 'top': 
               get_stock_news() 
             case 'search':

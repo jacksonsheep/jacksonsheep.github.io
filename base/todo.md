@@ -9,9 +9,9 @@ dida:  65tZx4T55SFovDgfys  dK886#p!i(!N!jnKBjp1jY%H(93S1(gZ
 
 ## todo
 - 配置网络代理和服务导出
-- 更新nexo和学习nodejs/scrapt
+- 更新hexo和学习nodejs/scrapt
 - 完成单规划，周末安排
-- 晚 课1h
+- 晚 课1h，微信1，锻炼0.5
 ## future
 - 生活
   - 25: 完成高级，确定目标，完整课j
@@ -19,7 +19,7 @@ dida:  65tZx4T55SFovDgfys  dK886#p!i(!N!jnKBjp1jY%H(93S1(gZ
       - 完成基础内容整理（3.15）
       - 熟练模拟3(3.30) st etf 优先
       - [ ] 晚 团+1h
-      - [ ] 实践尝试,并整理策略（4.30）
+      - 实践尝试,并整理策略（4.30）
     - 目标（4.1）
       - 确定目标范围(3.15)
       - 确定目标途径(3.20) 书店，线上，减脂

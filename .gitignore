@@ -5,3 +5,7 @@
 /db.json
 server.log
 /base/build/
+ceph
+nfs-ganesha
+zfs
+.deploy_git/

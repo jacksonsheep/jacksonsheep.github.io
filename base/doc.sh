@@ -18,6 +18,7 @@ case $1 in
   'weechat') w3m https://weechat.org/doc/;;
   'wanfang') w3m https://c.wanfangdata.com.cn/patent;;
   'io500') w3m https://io500.org/;;
+  'sqlite') w3m https://www.runoob.com/sqlite/sqlite-tutorial.html;;
 
 # other website
   'stock') w3m https://www.eastmoney.com ;;
@@ -29,7 +30,7 @@ case $1 in
   
   *) echo -e 'input not match:
   gitee / docker / nginx / python / nodejs / ceph / daos
-  hexo / next / weixin / weechat / wanfang / io500
+  hexo / next / weixin / weechat / wanfang / sqlite / io500
   stock / weechat / phone / penpai / bing / dida / read'
 esac
 
