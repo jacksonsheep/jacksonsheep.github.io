@@ -31,7 +31,7 @@ case $1 in
   *) echo -e 'input not match:
   gitee / docker / nginx / python / nodejs / ceph / daos
   hexo / next / weixin / weechat / wanfang / sqlite / io500
-  stock / weechat / phone / penpai / bing / dida / read'
+  stock / phone / penpai / bing / dida / read'
 esac
 
   #   # 

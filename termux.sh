@@ -1,4 +1,4 @@
-termux-change-repo -r https://mirrors.tuna.tsinghua.edu.cn/termux/stable
+#termux-change-repo -r https://mirrors.tuna.tsinghua.edu.cn/termux/stable
 #pkg update
 
 pkg install openssh git nginx w3m man nodejs vim weechat sqlite python -y
