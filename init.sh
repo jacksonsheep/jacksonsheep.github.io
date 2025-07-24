@@ -16,7 +16,7 @@
 # alias rm='rm -i'
 # alias cp='cp -i'
 # alias mv='mv -i'
-ifconfig |grep inet
+#ifconfig |grep inet
 alias ls='ls -CF --color '
 alias l='ls -CF --color '
 alias la='ls -A --color '
@@ -47,18 +47,18 @@ alias mongo='docker exec -it mongo mongo'
 alias space='echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"'
 alias bat='bat(){ cat $1 |less; };bat'
 alias alist='cd ~/storage; alist '
+alias ali='sshpass -p "01030810Cyl!" ssh -x root@47.76.164.208'
 # cat ~/demo/base/todo.md
-if [ $(mount -l |grep xfs|wc -l) -eq 0 ];then
-    sh /opt/xfs.sh
-fi
-journalctl --vacuum-size=10K
-echo "/var/log/core/core.%e.%p.%h.%t" | tee /proc/sys/kernel/core_pattern
+#if [ $(mount -l |grep xfs|wc -l) -eq 0 ];then
+#    sh /opt/xfs.sh
+#fi
+#journalctl --vacuum-size=10K
+#echo "/var/log/core/core.%e.%p.%h.%t" | tee /proc/sys/kernel/core_pattern
 export HISTTIMEFORMAT='%F %T '
 export WEECHAT_HOME='/opt/weechat'
-
 #export LANG=zh_CN.UTF-8
 #export LC_ALL=zh_CN.UTF-8
 
-
+#sshpass -p '01030810Cyl!' ssh -x root@47.76.164.208
 
 # evince *.pdf   view pdf file

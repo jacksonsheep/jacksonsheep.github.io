@@ -1,35 +1,37 @@
+command='lynx'
 case $1 in
 #  code doc 
-  'git') w3m https://segmentfault.com/a/1190000000307435;;
-  'gitee') w3m https://www.gitee.com;;
-  'docker') w3m https://docker.com;;
-  'nginx')w3m http://tengine.taobao.org/book/index.html;;
-  'python') w3m https://www.runoob.com/python3/python3-data-analysis.html;;
-  # 'ceph') w3m https://docs.ceph.com/en/latest/ ;;
-  'ceph') w3m https://tracker.ceph.com/projects/cephfs/issues;;
-  'redis') w3m https://redis.io/docs/;;
-  'nodejs') w3m https://nodejs.org/zh-cn/learn/getting-started/introduction-to-nodejs;;
-  'daos')  w3m https://docs.daos.io/v2.4 ;;
+  'git') $command https://segmentfault.com/a/1190000000307435;;
+  'gitee') $command https://www.gitee.com;;
+  'docker') $command https://docker.com;;
+  'nginx')$command http://tengine.taobao.org/book/index.html;;
+  'python') $command https://www.runoob.com/python3/python3-data-analysis.html;;
+  'api') $command https://wiki.termux.com/wiki/Termux:API ;;
+  # 'ceph') $command https://docs.ceph.com/en/latest/ ;;
+  'ceph') $command https://tracker.ceph.com/projects/cephfs/issues;;
+  'redis') $command https://redis.io/docs/;;
+  'nodejs') $command https://nodejs.org/zh-cn/learn/getting-started/introduction-to-nodejs;;
+  'daos')  $command https://docs.daos.io/v2.4 ;;
   
 # blog doc
-  'hexo') w3m https://hexo.io/zh-cn/docs/configuration;;
-  'next') w3m https://theme-next.js.org/docs;;
-  'weixin') w3m https://developers.weixin.qq.com/doc/offiaccou nt/Getting_Started/Overview.html;;
-  'weechat') w3m https://weechat.org/doc/;;
-  'wanfang') w3m https://c.wanfangdata.com.cn/patent;;
-  'io500') w3m https://io500.org/;;
-  'sqlite') w3m https://www.runoob.com/sqlite/sqlite-tutorial.html;;
+  'hexo') $command https://hexo.io/zh-cn/docs/configuration;;
+  'next') $command https://theme-next.js.org/docs;;
+  'weixin') $command https://developers.weixin.qq.com/doc/offiaccou nt/Getting_Started/Overview.html;;
+  '$command') $command https://$command.org/doc/;;
+  'wanfang') $command https://c.wanfangdata.com.cn/patent;;
+  'io500') $command https://io500.org/;;
+  'sqlite') $command https://www.runoob.com/sqlite/sqlite-tutorial.html;;
 
 # other website
-  'stock') w3m https://www.eastmoney.com ;;
-  'phone') w3m http://www.shoujixiufu.com/;;
-  'penpai') w3m https://www.thepaper.cn/;;
-  'bing') w3m http://www.bing.com;;
-  'dida') w3m https://www.dida365.com/webapp/;;
-  'read') w3m https://weread.qq.com/;;
+  'stock') $command https://www.eastmoney.com ;;
+  'phone') $command http://www.shoujixiufu.com/;;
+  'penpai') $command https://www.thepaper.cn/;;
+  'bing') $command http://www.bing.com;;
+  'dida') $command https://www.dida365.com/webapp/;;
+  'read') $command https://weread.qq.com/;;
   
   *) echo -e 'input not match:
-  gitee / docker / nginx / python / nodejs / ceph / daos
+  gitee / docker / nginx / python / nodejs / ceph / daos / api
   hexo / next / weixin / weechat / wanfang / sqlite / io500
   stock / phone / penpai / bing / dida / read'
 esac

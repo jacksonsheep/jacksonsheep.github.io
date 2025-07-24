@@ -9,5 +9,5 @@ if  [ $# -ne 0 ];then
    #echo "$json_obj"
    curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions -H "Authorization: Bearer sk-dfb4196dc2d14942acf3c9c1fb327f99" -H "Content-Type: application/json" -d "$json_obj"
 else
-  echo 'input question invaild'
+  echo 'error: input question invaild'
 fi
