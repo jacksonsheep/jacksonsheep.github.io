@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jacksonsheep.github.io</id>
+    <title>Jacksonsheep • Posts by &#34;ssh&#34; tag</title>
+    <link href="https://jacksonsheep.github.io" />
+    <updated>2023-01-07T01:19:47.000Z</updated>
+    <category term="basic" />
+    <category term="manage" />
+    <category term="language" />
+    <category term="java" />
+    <category term="system" />
+    <category term="network" />
+    <category term="tool" />
+    <category term="ssh" />
+    <category term="git" />
+    <category term="storage" />
+    <category term="ceph" />
+    <category term="client" />
+    <category term="gateway" />
+    <category term="database" />
+    <entry>
+        <id>https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd</id>
+        <title>ssh-nopasswd</title>
+        <link rel="alternate" href="https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd"/>
+        <content type="html">&lt;ol&gt;
+&lt;li&gt;ssh 客户端端执行 ssh-keygen  生成公钥和私钥到~/.ssh
+&lt;blockquote&gt;
+&lt;p&gt;具体文件为 ~/.ssh/id_rsa(私钥)  ~/.ssh/id_rsa.pub（公钥）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub &lt;a href=&#34;mailto:root@192.168.235.22&#34;&gt;root@192.168.235.22&lt;/a&gt; 上传公钥到ssh服务器，指定服务器ip和ssh用户名&lt;/li&gt;
+&lt;li&gt;ssh &lt;a href=&#34;mailto:root@192.168.235.22&#34;&gt;root@192.168.235.22&lt;/a&gt; 执行免密登陆&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="tool" />
+        <category term="ssh" />
+        <updated>2023-01-07T01:19:47.000Z</updated>
+    </entry>
+</feed>

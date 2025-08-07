@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Jacksonsheep • All posts by \"gateway\" tag",
+    "description": "a summary for coding life",
+    "home_page_url": "https://jacksonsheep.github.io",
+    "items": [
+        {
+            "id": "https://jacksonsheep.github.io/2024/05/storage/ganesha",
+            "url": "https://jacksonsheep.github.io/2024/05/storage/ganesha",
+            "title": "ganesha",
+            "date_published": "2024-05-21T16:00:00.000Z",
+            "content_html": "",
+            "tags": [
+                "storage",
+                "gateway"
+            ]
+        }
+    ]
+}

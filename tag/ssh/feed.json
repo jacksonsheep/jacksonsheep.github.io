@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Jacksonsheep • All posts by \"ssh\" tag",
+    "description": "a summary for coding life",
+    "home_page_url": "https://jacksonsheep.github.io",
+    "items": [
+        {
+            "id": "https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd",
+            "url": "https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd",
+            "title": "ssh-nopasswd",
+            "date_published": "2023-01-07T01:19:47.000Z",
+            "content_html": "<ol>\n<li>ssh 客户端端执行 ssh-keygen  生成公钥和私钥到~/.ssh\n<blockquote>\n<p>具体文件为 ~/.ssh/id_rsa(私钥)  ~/.ssh/id_rsa.pub（公钥）</p>\n</blockquote>\n</li>\n<li>ssh-copy-id -i ~/.ssh/id_rsa.pub <a href=\"mailto:root@192.168.235.22\">root@192.168.235.22</a> 上传公钥到ssh服务器，指定服务器ip和ssh用户名</li>\n<li>ssh <a href=\"mailto:root@192.168.235.22\">root@192.168.235.22</a> 执行免密登陆</li>\n</ol>\n",
+            "tags": [
+                "tool",
+                "ssh"
+            ]
+        }
+    ]
+}

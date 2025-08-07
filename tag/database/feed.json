@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Jacksonsheep • All posts by \"database\" tag",
+    "description": "a summary for coding life",
+    "home_page_url": "https://jacksonsheep.github.io",
+    "items": [
+        {
+            "id": "https://jacksonsheep.github.io/2022/07/about/data-manage",
+            "url": "https://jacksonsheep.github.io/2022/07/about/data-manage",
+            "title": "data-manage",
+            "date_published": "2022-07-05T16:00:00.000Z",
+            "content_html": "<h2 id=\"mysql\">mysql</h2>\n<p>关键字列举<br>\nSELECT  FROM    WHERE   LIMIT   GROUP BY    ORDER BY    SET<br>\n常用操作</p>\n<ol>\n<li>查询<br>\n当分页查询时，采用两次查询的方式，即第一次查询当前页的序号，第二次根据序号查找对应数据。这种方式主要用于单条数据较大且数据条很多的情况下对数据库查询的优化。<br>\n还有一种方式是在表中添加索引，利用MySql本身机制提升查询效率。</li>\n<li>表格\n<ul>\n<li>建表</li>\n<li>修改表结构</li>\n<li>删表</li>\n</ul>\n</li>\n<li>数据库\n<ul>\n<li>建库</li>\n<li>删库</li>\n</ul>\n</li>\n</ol>\n<h1>常用问题</h1>\n<ol>\n<li>忘记密码</li>\n</ol>\n",
+            "tags": [
+                "basic",
+                "database"
+            ]
+        }
+    ]
+}

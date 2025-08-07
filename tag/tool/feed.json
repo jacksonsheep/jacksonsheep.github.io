@@ -1,0 +1,60 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Jacksonsheep • All posts by \"tool\" tag",
+    "description": "a summary for coding life",
+    "home_page_url": "https://jacksonsheep.github.io",
+    "items": [
+        {
+            "id": "https://jacksonsheep.github.io/2025/07/linux-tools/vim-netrw",
+            "url": "https://jacksonsheep.github.io/2025/07/linux-tools/vim-netrw",
+            "title": "tool",
+            "date_published": "2025-07-15T16:00:00.000Z",
+            "content_html": "<h2 id=\"1-打开文件浏览器\">1. 打开文件浏览器</h2>\n<p>:Ex[plore]         &quot; 打开当前文件所在目录<br>\n:Sex[plore]        &quot; 在水平分割窗口中打开<br>\n:Vex[plore]        &quot; 在垂直分割窗口中打开<br>\n:Tex[plore]        &quot; 在新标签页中打开<br>\n:Ex [目录路径]     &quot; 打开指定目录</p>\n<h2 id=\"2-在文件浏览器中导航\">2. 在文件浏览器中导航</h2>\n<p>j/k：上下移动光标<br>\nh/l 或 Enter：进入 / 退出目录<br>\n%：创建新文件<br>\nd：创建新目录<br>\nD：删除文件或空目录<br>\nR：重命名文件或目录<br>\nyy：复制文件名（用于后续粘贴操作）<br>\np：在当前目录粘贴文件（需先复制）<br>\nr：刷新文件列表</p>\n<h2 id=\"3-快速打开文件\">3. 快速打开文件</h2>\n<p>o：在当前窗口打开文件<br>\nv：在垂直分割窗口中打开文件<br>\ns：在水平分割窗口中打开文件<br>\nt：在新标签页中打开文件</p>\n<h2 id=\"4-排序方式\">4. 排序方式</h2>\n<p>i：切换显示模式（详细列表 / 图标等）<br>\nI：显示 / 隐藏隐藏文件（以 . 开头的文件）<br>\nq：按名称排序（再次按 q 反转顺序）<br>\nt：按修改时间排序<br>\ns：按文件大小排序</p>\n<h2 id=\"5-书签功能\">5. 书签功能</h2>\n<p>ma：将当前目录标记为书签 a（可使用任意字母）<br>\n`a：跳转到书签 a 标记的目录</p>\n<h2 id=\"6-自定义配置\">6. 自定义配置</h2>\n<p>在 .vimrc 中添加以下配置可提升 netrw 的使用体验：<br>\nvim<br>\n&quot; 启用文件图标显示（需要安装 nerd-fonts）<br>\nlet g:netrw_liststyle = 3</p>\n<p>&quot; 隐藏冗余信息<br>\nlet g:netrw_banner = 0</p>\n<p>&quot; 自动切换目录（跟随当前文件）<br>\nlet g:netrw_keepdir = 0</p>\n<p>&quot; 高亮当前文件<br>\nlet g:netrw_hide=1</p>\n<p>&quot; 设置快捷键<br>\nnnoremap <leader>e :Ex<CR>        &quot; 快速打开文件浏览器<br>\nnnoremap <leader>se :Sex<CR>      &quot; 水平分割打开<br>\nnnoremap <leader>ve :Vex<CR>      &quot; 垂直分割打开</p>\n<p>四、与当前文件联动<br>\n:Lexplore：在左侧垂直分割窗口打开文件浏览器<br>\n:Rexplore：在右侧垂直分割窗口打开文件浏览器<br>\n:Sexplore：在上方水平分割窗口打开文件浏览器<br>\n:Zexplore：打开文件浏览器并折叠其他窗口<br>\n五、实用技巧<br>\n快速定位当前文件：<br>\n在文件浏览器中按 %，自动定位到当前编辑的文件。<br>\n浏览远程文件：<br>\nvim<br>\n:e scp://用户名@服务器地址/路径/   &quot; 通过 SSH 浏览远程文件</p>\n<p>FTP 功能：<br>\nvim<br>\n:e <a href=\"ftp://%E7%94%A8%E6%88%B7%E5%90%8D:%E5%AF%86%E7%A0%81@%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%B0%E5%9D%80/%E8%B7%AF%E5%BE%84/\">ftp://用户名:密码@服务器地址/路径/</a></p>\n<p>六、退出文件浏览器<br>\n:q：关闭当前文件浏览器窗口<br>\n:only：关闭其他所有窗口，只保留当前窗口<br>\n七、常见问题<br>\n中文乱码：<br>\n在 .vimrc 中添加：<br>\nvim<br>\nset fileencodings=utf-8,gbk,ucs-bom,cp936</p>\n<p>性能优化：<br>\nvim<br>\nlet g:netrw_localcopydircmd = “cp -r”  &quot; 加速复制大目录<br>\nlet g:netrw_async = 1                  &quot; 启用异步操作</p>\n",
+            "tags": [
+                "tool"
+            ]
+        },
+        {
+            "id": "https://jacksonsheep.github.io/2024/03/linux-tools/weechat",
+            "url": "https://jacksonsheep.github.io/2024/03/linux-tools/weechat",
+            "title": "weechat",
+            "date_published": "2024-03-10T07:12:49.000Z",
+            "content_html": "<p>install step</p>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">apt install weechat -y</span><br></pre></td></tr></table></figure>\n<ol>\n<li>连接irc服务端</li>\n</ol>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">weechat </span><br><span class=\"line\">/server list        #查看当前可用的服务端信息</span><br><span class=\"line\">/server info freenode     # 查看freenode服务器的详细信息</span><br><span class=\"line\">/server add freenode irc.freenode.cn  # 添加freenode服务器</span><br><span class=\"line\">/connect freenode    # 连接对应服务器</span><br></pre></td></tr></table></figure>\n<ol start=\"2\">\n<li>进入频道</li>\n</ol>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">/list       # 查看所有频道</span><br><span class=\"line\">/join #linuxba  #进入linuxba频道</span><br></pre></td></tr></table></figure>\n<ol start=\"3\">\n<li>用户设置</li>\n</ol>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">/set</span><br></pre></td></tr></table></figure>\n<ol start=\"4\">\n<li>帮助文档</li>\n</ol>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">/help       # 查看可用命令</span><br><span class=\"line\">/connect help     # 查看connect 的帮助文档</span><br></pre></td></tr></table></figure>\n",
+            "tags": [
+                "tool"
+            ]
+        },
+        {
+            "id": "https://jacksonsheep.github.io/2023/11/linux-tools/w3m",
+            "url": "https://jacksonsheep.github.io/2023/11/linux-tools/w3m",
+            "title": "w3m",
+            "date_published": "2023-11-04T07:12:49.000Z",
+            "content_html": "<h2 id=\"安装方式\">安装方式</h2>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">apt install w3m w3m-image -y</span><br></pre></td></tr></table></figure>\n<h2 id=\"键盘操作\">键盘操作</h2>\n<ol>\n<li>浏览网页</li>\n</ol>\n<ul>\n<li>浏览链接：</li>\n</ul>\n<blockquote>\n<p>按下回车键（Enter）可以访问当前光标下的链接。<br>\n使用方向键（上下左右）来选择链接。<br>\n返回上一页：  按下 b 键。<br>\n前进到下一页：按下 f 键。<br>\n刷新当前页面：按下 r 键。</p>\n</blockquote>\n<ul>\n<li>搜索和过滤</li>\n</ul>\n<blockquote>\n<p>搜索：按下 / 键，然后输入搜索关键词并按回车键。<br>\n过滤链接：按下 g 键，然后输入过滤条件并按回车键。</p>\n</blockquote>\n<ul>\n<li>页面导航</li>\n</ul>\n<blockquote>\n<p>前进/后退：使用 Page Up 和 Page Down 键。<br>\n滚动：使用空格键可以向下滚动，按 b 键可以向上滚动。<br>\n使用 Home 和 End 键可以滚动到页面的顶部或底部。</p>\n</blockquote>\n<ul>\n<li>文本编辑</li>\n</ul>\n<blockquote>\n<p>选择要复制的文本，然后按下 c 键。<br>\n粘贴文本：按下 v 键。</p>\n</blockquote>\n<ul>\n<li>其他操作</li>\n</ul>\n<blockquote>\n<p>查看源代码：按下 s 键。<br>\n保存页面：按下 o 键，然后选择保存位置和文件名。<br>\n历史记录： 按下Alt + ‘]’<br>\n关闭当前窗口：按下 q 键。<br>\n退出w3m：在w3m中按下 Ctrl+D。</p>\n</blockquote>\n<ol start=\"2\">\n<li>配置查看和修改</li>\n</ol>\n<blockquote>\n<p>h：帮助<br>\nu：查看URL<br>\ni：查看元信息<br>\nl：查看或更改语言<br>\np：查看或更改字体<br>\nw：查看或更改窗口设置<br>\nz：查看或更改用户设置<br>\ny：查看或更改代理设置<br>\na：查看或更改代理自动选择设置<br>\nk：查看或更改键盘设置<br>\nm：查看或更改鼠标设置<br>\nn：查看或更改网络设置<br>\nv：查看或更改视图设置<br>\ng：查看或更改通用设置</p>\n</blockquote>\n",
+            "tags": [
+                "tool"
+            ]
+        },
+        {
+            "id": "https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd",
+            "url": "https://jacksonsheep.github.io/2023/01/linux-tools/ssh-nopasswd",
+            "title": "ssh-nopasswd",
+            "date_published": "2023-01-07T01:19:47.000Z",
+            "content_html": "<ol>\n<li>ssh 客户端端执行 ssh-keygen  生成公钥和私钥到~/.ssh\n<blockquote>\n<p>具体文件为 ~/.ssh/id_rsa(私钥)  ~/.ssh/id_rsa.pub（公钥）</p>\n</blockquote>\n</li>\n<li>ssh-copy-id -i ~/.ssh/id_rsa.pub <a href=\"mailto:root@192.168.235.22\">root@192.168.235.22</a> 上传公钥到ssh服务器，指定服务器ip和ssh用户名</li>\n<li>ssh <a href=\"mailto:root@192.168.235.22\">root@192.168.235.22</a> 执行免密登陆</li>\n</ol>\n",
+            "tags": [
+                "tool",
+                "ssh"
+            ]
+        },
+        {
+            "id": "https://jacksonsheep.github.io/2022/07/linux-tools/tools",
+            "url": "https://jacksonsheep.github.io/2022/07/linux-tools/tools",
+            "title": "tool",
+            "date_published": "2022-07-05T16:00:00.000Z",
+            "content_html": "<h2 id=\"git-命令：整体流程，先pull获取最新代码，合并后提交本地，之后push\">git 命令：整体流程，先pull获取最新代码，合并后提交本地，之后push</h2>\n<ul>\n<li>\n<p>git init 初始化git本地仓库</p>\n</li>\n<li>\n<p>git log 展示提交日志</p>\n<ul>\n<li>git log --pretty=oneline 线性展示日志</li>\n<li>git log --graph\t以树形展示日志</li>\n</ul>\n</li>\n<li>\n<p>git reflog 展示操作日志</p>\n</li>\n<li>\n<p>git reset --soft HEAD^ 返回上次提交</p>\n</li>\n<li>\n<p>git rm --cached <code>&lt;file&gt;</code>  从暂存区删除文件，但不改变文件区</p>\n</li>\n<li>\n<p>git status 当前状态</p>\n</li>\n<li>\n<p>git commit -m “note”\t提交代码</p>\n</li>\n<li>\n<p>git remote 查看远程状态</p>\n<ul>\n<li>git remote -v 显示详细远程状态</li>\n</ul>\n</li>\n<li>\n<p>git push origin [master/dev]\t推送分支</p>\n</li>\n<li>\n<p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;  拉取分支</p>\n</li>\n<li>\n<p>git clone <a href=\"mailto:git@github.com\">git@github.com</a>:…/.git\t\t从远程克隆项目</p>\n</li>\n<li>\n<p>git rebase 变基，将修改前的基础转换为最新状态</p>\n</li>\n<li>\n<p>git branch [name]\t创建分支</p>\n<ul>\n<li>git checkout [name] 切换分支</li>\n<li>git branch\t查看分支</li>\n<li>git merge [name]\t合并分支\n<ul>\n<li>git merge --no-ff -m “merge with no-ff” dev\t合并生成新的提交，当分支删除，信息仍然存在</li>\n</ul>\n</li>\n<li>git branch -d [name]\t删除分支</li>\n<li>git branch -D [name]\t强行删除分支</li>\n<li>git stash 储存当前分支状态</li>\n<li>git stash list 查看可回复状态</li>\n<li>git stash apply 回复+ git shash drop 删除</li>\n<li>git stash pop 回复并删除</li>\n<li>git cherry-pick [number] 将master修改的bug复制到当前分支</li>\n</ul>\n</li>\n<li>\n<p>git tag 查看所有标签</p>\n<ul>\n<li>git tag [name] 打开新的标签， 状态为当前状态</li>\n<li>git tag [name] [number] 提交number对应状态的标签name</li>\n<li>git show [name]\t显示标签内容</li>\n<li>git tag -d [name]\t删除标签</li>\n<li>git push origin :refs/tags/[name] 删除远程标签</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"idea\">idea</h2>\n<ul>\n<li>\n<p>常用函数</p>\n<ul>\n<li>@deprecated 该类已过时</li>\n<li>//todo\t后期可添加内容</li>\n</ul>\n</li>\n<li>\n<p>常用快捷键</p>\n<ul>\n<li>http：get,post,delete,put用http Tools调试</li>\n<li>相机图标截取当前线程状态 ：查看在运行中的线程</li>\n<li>打断点，调试</li>\n<li>找到实现 ctrl+点击   或者 前方图标</li>\n<li>ctrl+shift+/\t区块注释</li>\n<li>Alt+Insert \t产生构造方法、getter/setter等方法</li>\n<li>Ctrl+R\t\t替换</li>\n<li>Shift+Enter \t在当前行的下方开始新行</li>\n<li>Ctrl+Alt+Enter \t在当前行上方插入新行</li>\n<li>Ctrl + Alt + b \t转到实现</li>\n<li>Ctrl+Alt+L \t格式化代码</li>\n<li>ctrl+Q \t\t查看方法说明</li>\n<li>Ctrl+D \t\t复制光标所在行的内容，插入光标位置下面</li>\n<li>psvn\t\tmain</li>\n<li>sout\t\t默认输出</li>\n<li>itar\t\tfor遍历</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"vscode\">vscode</h2>\n<ul>\n<li>ctrl+E    oepn folder explose</li>\n</ul>\n<h2 id=\"notepad\">notepad</h2>\n<ul>\n<li>ctrl d  复制当前行</li>\n<li>ctrl l  删除当前行</li>\n</ul>\n<h2 id=\"vim\">vim</h2>\n<p>yy   复制光标当前行<br>\nn    粘贴剪切板的行到光标位置</p>\n<h2 id=\"nano\">nano</h2>\n<h2 id=\"linux-operate\">linux operate</h2>\n<p>deb<br>\n其余文件，安装后覆盖到根目录<br>\nDEBIAN<br>\ncontrol<br>\nPackage    程序名称    中间不能有空格<br>\nVersion    软件版本<br>\nDescription    程序说明<br>\nSection    软件类别    utils, net, mail, text, x11<br>\nPriority    软件对于系统的重要程度    required, standard, optional, extra等；<br>\nEssential    是否是系统最基本的软件包    yes/no，若为yes,则不允许卸载（除非强制性卸载）<br>\nArchitecture    软件所支持的平台架构    i386, amd64, m68k, sparc, alpha, powerpc等<br>\nSource    软件包的源代码名称<br>\nDepends    软件所依赖的其他软件包和库文件    若依赖多个软件包和库文件，采用逗号隔开<br>\nPre-Depends    软件安装前必须安装、<br>\n配置依赖性的软件包和库文件    常用于必须的预运行脚本需求<br>\nRecommends    推荐安装的其他软件包和库文件<br>\nSuggests    建议安装的其他软件包和库文件<br>\npostinst(postinstallation)  负责完成安装包时的配置工作。如新安装或升级的软件重启服务。软件安装完后，执行该Shell脚本，一般用来配置软件执行环境，必须以“#!/bin/sh”为首行。<br>\npostrm(postremove)  负责修改软件包链接或文件关联，或删除由它创建的文件。软件卸载后，执行该Shell脚本，一般作为清理收尾工作，必须以“#!/bin/sh”为首行<br>\npreinst(preinstallation)   在Deb包文件解包之前（即软件安装前），将会运行该脚本。可以停止作用于待升级软件包的服务，直到软件包安装或升级完成。<br>\nprerm(preremove) 该脚本负责停止与软件包相关联的daemon服务。它在删除软件包关联文件之前执行。<br>\ncopyright(版权)<br>\nchanglog(修订记录)<br>\nconffiles</p>\n<p>dpkg<br>\ndkpg -b . mydeb.deb  打包<br>\ndkpg -i mydeb.deb    装包（添加 --force-depends 强制安装）<br>\ndpkg --unpack mydeb.deb  解压包，不安装<br>\ndpkg -c mydeb.deb    查看deb包文件内容<br>\ndpkg --info mydeb.deb  查看deb包信息<br>\ndpkg -L mydeb         列出deb包关联的文件<br>\ndpkg -s|–status mydeb         查看deb包是否安装，查看安装信息<br>\ndpkg -r mydeb         卸载deb包，保留配置文件<br>\ndpkg -P|–purge mydeb         删除deb包，删除配置文件<br>\napt-get install ./mydeb.deb    安装依赖包，安装deb包~</p>\n",
+            "tags": [
+                "tool",
+                "git"
+            ]
+        }
+    ]
+}

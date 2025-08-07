@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Jacksonsheep • Posts by &#34;gateway&#34; tag</title>
+        <link>https://jacksonsheep.github.io</link>
+        <description>a summary for coding life</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 22 May 2024 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 22 May 2024 00:00:00 +0800</lastBuildDate>
+        <category>basic</category>
+        <category>manage</category>
+        <category>language</category>
+        <category>java</category>
+        <category>system</category>
+        <category>network</category>
+        <category>tool</category>
+        <category>ssh</category>
+        <category>git</category>
+        <category>storage</category>
+        <category>ceph</category>
+        <category>client</category>
+        <category>gateway</category>
+        <category>database</category>
+        <item>
+            <guid isPermalink="true">https://jacksonsheep.github.io/2024/05/storage/ganesha</guid>
+            <title>ganesha</title>
+            <link>https://jacksonsheep.github.io/2024/05/storage/ganesha</link>
+            <category>storage</category>
+            <category>gateway</category>
+            <pubDate>Wed, 22 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Jacksonsheep • Posts by &#34;client&#34; tag</title>
+        <link>https://jacksonsheep.github.io</link>
+        <description>a summary for coding life</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 06 Jul 2022 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0800</lastBuildDate>
+        <category>basic</category>
+        <category>manage</category>
+        <category>language</category>
+        <category>java</category>
+        <category>system</category>
+        <category>network</category>
+        <category>tool</category>
+        <category>ssh</category>
+        <category>git</category>
+        <category>storage</category>
+        <category>ceph</category>
+        <category>client</category>
+        <category>gateway</category>
+        <category>database</category>
+        <item>
+            <guid isPermalink="true">https://jacksonsheep.github.io/2022/07/storage/cephfs</guid>
+            <title>cephfs</title>
+            <link>https://jacksonsheep.github.io/2022/07/storage/cephfs</link>
+            <category>storage</category>
+            <category>ceph</category>
+            <category>client</category>
+            <pubDate>Wed, 06 Jul 2022 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1&gt;ceph 文件存储总结&lt;/h1&gt;
+&lt;h2 id=&#34;组织结构&#34;&gt;组织结构&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Monitor ceph 管理节点，保存并维护各个map信息和权限，日志等集群管理内容&lt;/li&gt;
+&lt;li&gt;MDS  元数据服务器，创建，修改，重命名，删除文件，文件夹等服务的提供者，同时包含挂载和卸载部分。
+&lt;ol&gt;
+&lt;li&gt;MDSDaemon mds守护进程，mds创建时通过它来引导其他部分的启动和正常执行内容&lt;/li&gt;
+&lt;li&gt;MDSRank/MDRankDispatcher, mds的主要消息分发器，和Monitor等集群通信的通过Beacon分发器使用Monc传递消息&lt;/li&gt;
+&lt;li&gt;Server,  重点业务执行部分，元数据的处理大多位于此&lt;/li&gt;
+&lt;li&gt;MDCache。 mds缓存处理，对业务快速响应的支持&lt;/li&gt;
+&lt;li&gt;MDLog， mds日志操作，每个元数据操作先写入日志，确保数据不丢失之后通过日志下刷落盘持久化。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;OSD  实际存储组件，存储数据和元数据的磁盘管理，底层数据存储原理位于此
+&lt;ol&gt;
+&lt;li&gt;rados 一个文件对应多个对象，一个文件夹默认对应一个对象，默认对象大小为4M，超出部分存入下一个对象&lt;/li&gt;
+&lt;li&gt;pg， 每个对象对应一个pg，映射关系通过hash完成&lt;/li&gt;
+&lt;li&gt;osd， 每个pg对应多个osd，映射关系为crush算法。osd直接控制每个对象的数据块存储在磁盘的位置，以及日志的存储等内容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;源码分析&#34;&gt;源码分析&lt;/h2&gt;
+&lt;h3 id=&#34;mkdir&#34;&gt;mkdir&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Server–handle_client_mkdir()
+&lt;ol&gt;
+&lt;li&gt;获取或创建当前父级目录的信息，并创建Dentry和父级目录的Dir相连接&lt;/li&gt;
+&lt;li&gt;创建空Inode，并和Dentry连接，放入projected队列中&lt;/li&gt;
+&lt;li&gt;创建或查找对应dir，并和inode连接&lt;/li&gt;
+&lt;li&gt;early replay&lt;/li&gt;
+&lt;li&gt;写入日志，EUpdate&lt;/li&gt;
+&lt;li&gt;回复客户端，并将inode移出projected队列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ceph-fuse&#34;&gt;ceph-fuse&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;client 向 Monitor 权限认证并订阅monmap，fsmap，osdmap&lt;/li&gt;
+&lt;li&gt;client 向 mds 发送挂载申请，并获取挂载目录 的inode信息&lt;/li&gt;
+&lt;li&gt;client 内核操作，将inode信息更新到vfs中，方便后续使用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mds-状态切换&#34;&gt;mds 状态切换&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

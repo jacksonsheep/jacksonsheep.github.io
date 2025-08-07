@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jacksonsheep.github.io</id>
+    <title>Jacksonsheep • Posts by &#34;database&#34; tag</title>
+    <link href="https://jacksonsheep.github.io" />
+    <updated>2022-07-05T16:00:00.000Z</updated>
+    <category term="basic" />
+    <category term="manage" />
+    <category term="language" />
+    <category term="java" />
+    <category term="system" />
+    <category term="network" />
+    <category term="tool" />
+    <category term="ssh" />
+    <category term="git" />
+    <category term="storage" />
+    <category term="ceph" />
+    <category term="client" />
+    <category term="gateway" />
+    <category term="database" />
+    <entry>
+        <id>https://jacksonsheep.github.io/2022/07/about/data-manage</id>
+        <title>data-manage</title>
+        <link rel="alternate" href="https://jacksonsheep.github.io/2022/07/about/data-manage"/>
+        <content type="html">&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;p&gt;关键字列举&lt;br&gt;
+SELECT  FROM    WHERE   LIMIT   GROUP BY    ORDER BY    SET&lt;br&gt;
+常用操作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;查询&lt;br&gt;
+当分页查询时，采用两次查询的方式，即第一次查询当前页的序号，第二次根据序号查找对应数据。这种方式主要用于单条数据较大且数据条很多的情况下对数据库查询的优化。&lt;br&gt;
+还有一种方式是在表中添加索引，利用MySql本身机制提升查询效率。&lt;/li&gt;
+&lt;li&gt;表格
+&lt;ul&gt;
+&lt;li&gt;建表&lt;/li&gt;
+&lt;li&gt;修改表结构&lt;/li&gt;
+&lt;li&gt;删表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数据库
+&lt;ul&gt;
+&lt;li&gt;建库&lt;/li&gt;
+&lt;li&gt;删库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;常用问题&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;忘记密码&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="basic" />
+        <category term="database" />
+        <updated>2022-07-05T16:00:00.000Z</updated>
+    </entry>
+</feed>
